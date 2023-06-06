@@ -16,6 +16,12 @@ db_name <- 'info514'
 db_host <- 'dbinfo514proj-instance-1.cienxzgfkjlg.us-east-2.rds.amazonaws.com' # for local access
 db_port <- 3306
 
+#* @filter cors
+cors <- function(res) {
+  res$setHeader("Access-Control-Allow-Origin", "*")
+  plumber::forward()
+}
+
 #* @apiTitle Plumber Example API
 #* @apiDescription Plumber example description.
 
